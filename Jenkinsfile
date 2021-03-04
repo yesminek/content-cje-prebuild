@@ -1,6 +1,7 @@
-node {
-
-   }
+pipeline {
+   agent {
+      label : 'slave'  }
+   stages {
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
@@ -15,4 +16,4 @@ node {
    stage('Results') {
       archiveArtifacts 'index.jsp'
    }
-}
+} } }
